@@ -79,7 +79,6 @@ module.exports = function (resume,upsert,remove,config,random) {
     // NOTE: userid should be checked before this point.
     // NOTE: user credits should be deducted before this point.
     assert(gameid,'requires gameid to join')
-    assert(!areItemsInGame(items),'one of your items is in another game')
     var game = get(gameid)
     const bet = Game(game).canJoin(userid, value, selection)
     game = Game(game).join(bet)
